@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Language" content="pt-BR">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body style="background-color: #2A1042">
+		<div class="top">
+			<div class="settings">
+				<section id="adds">
+					<h3>Endereço:</h3>
+					<input type=text class="address" placeholder="Ex: Avenida Celso Garcia, 1592"/>
+			</section>
+
+			<section id="options">
+				<label for="mov" id="labelMov">Ônibus em Movimento</label>
+				<input type="checkbox" class="movement" id = "mov"/>
+				<label for="stp" id="labelStp">Paradas de Ônibus</label>
+				<input type="checkbox" class="stops" id = stp/>
+			</section>
+			</div>
+			<div class="id">
+				<table id = "idtabela">
+					<tr>
+						<td>
+							<label id="nusp">Amanda Biosca</label>
+						</td>
+						<td>
+						<label id="nusp">Numero da Amanda</label>
+					</td>
+				</tr>
+					<tr>
+						<td>
+							<label id="nusp">Bruno Yuji</label>
+						</td>
+						<td>
+						<label id="nusp">9779051</label>
+					</td>
+				</tr>
+					<tr>
+						<td>
+							<label id="nusp">Wesley Ramos</label>
+						</td>
+						<td>
+						<label id="nusp">9778971</label>
+					</td>
+				</tr>
+				</table>
+			</div>
+    </div>
+		<div class="map">
+				<div id="map"></div>
+				<script>
+					function initMap() {
+						var uluru = {lat:-23.4820853,lng:-46.5004914};
+						var map = new google.maps.Map(document.getElementById('map'), {
+							mapTypeId: google.maps.MapTypeId.HYBRID,//satellite w/ labels
+							//mapTypeId: google.maps.MapTypeId.SATELLITE,
+					//  mapTypeId: google.maps.MapTypeId.TERRAIN,
+					 center: uluru,
+					 zoom: 40
+			 });
+						var marker = new google.maps.Marker({
+							position: uluru,
+							map: map
+						});
+					}
+				</script>
+				<script async defer
+				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW6Zct2Ms-BSWYv3o5Mgh-VFreKGPVkmk&callback=initMap">
+		</script>
+		</div>
+	</body>
+</html>
